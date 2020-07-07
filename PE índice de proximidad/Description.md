@@ -1,4 +1,4 @@
-Me baso en el trabajo «Characteristics of Workers in Low Work-From-Home and High Personal-Proximity Occupations» (Mongey & Weinberg, 2020) para elaborar un indicador de proximidad física por cada sector de la economía peruana. Toda la información es pública.
+Me baso en el trabajo «Characteristics of Workers in Low Work-From-Home and High Personal-Proximity Occupations» (Mongey & Weinberg, 2020) para elaborar un indicador de proximidad física por cada sector de la economía peruana. Discuto un poco la coyuntura nacional y la informalidad. Toda la información es pública.
 
 Uso Stata para realizar el ejercicio. Las bases de datos se pueden encontrar en http://iinei.inei.gob.pe/microdatos/. Son necesarias las bases:
 * enaho01a-2018-500.dta (Código Módulo: 5, base anual 2018)
