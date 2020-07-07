@@ -9,10 +9,10 @@ Uso Stata para realizar el ejercicio. Las bases de datos se pueden encontrar en 
 
 Instrucciones para replicación:  
 1) Crear una carpeta que contenga 4 carpetas nombradas de la siguiente manera:  
-  "1_Do" 
-  "2_BD"
-  "3_Temp"
-  "4_Tablas"
+  "1_Do"  
+  "2_BD"  
+  "3_Temp"  
+  "4_Tablas"  
 2) En la carpeta "2_BD" colocar todas las bases de datos necesarias.
 3) La carpeta "1_Do" sirve para guardar archivos .do; la carpeta "3_Temp", para almacenar archivos temporales; la "4_Tablas", para guardar tablas.
 4) En el archivo "Juntos2016. Sanchez Navarro.do" que se encuentra en la carpeta "Archivos", solo cambiar las direcciones "cd" de acuerdo con las respectivas direcciones.
