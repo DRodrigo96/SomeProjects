@@ -1,0 +1,1 @@
+Aquí hago un pequeño ejercicio demostrativo de evaluación de impacto de un programa social. Tomo el programa social Juntos y busco replicar un experimento aleatorio con la información de una encuesta a nivel de hogares. Toda la información es pública.
