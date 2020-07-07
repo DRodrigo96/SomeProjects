@@ -4,7 +4,7 @@
 clear all
 set more off
 
-cd "C:\Users\David\Desktop\Portfolio Git\1.Juntos 2016\2_BD"
+cd "C:\CHANGE THIS\2_BD"
 
 quietly {
 foreach x in enaho01a-2015-300 enaho01a-2016-300 enaho01-2016-700 sumaria-2016 {
@@ -18,7 +18,7 @@ unicode translate "`x'.dta"
 clear all 
 set more off
 
-cd "C:\Users\David\Desktop\Portfolio Git\1.Juntos 2016\\"
+cd "C:\CHANGE THIS\\"
 
 global a "1_Do" 
 global b "2_BD"
