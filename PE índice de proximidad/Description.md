@@ -13,4 +13,4 @@ Instrucciones para replicación:
   "4_Tablas"  
 2) En la carpeta "2_BD" colocar todas las bases de datos necesarias.
 3) La carpeta "1_Do" sirve para guardar archivos .do; la carpeta "3_Temp", para almacenar archivos temporales; la "4_Tablas", para guardar tablas.
-4) En el archivo "Proximity Index. Sánchez Navarro.do" que se encuentra en la carpeta "Archivos", solo cambiar las direcciones "cd" de acuerdo con las respectivas direcciones.
+4) En el archivo "ProximityIndex_Sánchez Navarro.do" que se encuentra en la carpeta "Archivos", solo cambiar las direcciones "cd" de acuerdo con las respectivas direcciones.
