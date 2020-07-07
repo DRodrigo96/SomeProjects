@@ -2,14 +2,14 @@
 
 
 clear all
-cd "C:\Users\RODRIGO\Desktop\Portafolio Git\3. Proximidad física por sectores\Proximidad Fisica\2_BD\\"
+cd "C:\CHANGE THIS\2_BD\\"
 
 unicode analyze "enaho01a-2018-500.dta"
 unicode encoding set "ISO-8859-1"
 unicode translate "enaho01a-2018-500.dta" 
 
 
-cd "C:\Users\RODRIGO\Desktop\Portafolio Git\3. Proximidad física por sectores\Proximidad Fisica\\"
+cd "C:\CHANGE THIS\\"
 
 global a "1_Do"
 global b "2_BD"
