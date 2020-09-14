@@ -1,1 +1,1 @@
-Un wordcloud para ver qué dijo el nuevo primer ministro Walter Martos en el congreso (11/08/2020).
+Un wordcloud para ver qué dijo el nuevo primer ministro Walter Martos en el congreso (11/08/2020). Créditos para [Andreas Mueller](https://github.com/amueller), de quien recuperé la idea.
