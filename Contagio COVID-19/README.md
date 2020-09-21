@@ -1,2 +1,4 @@
 Un mapa interactivo de contagiados por COVID-19 a nivel distrital usando la información del portal de datos abiertos de Perú:  
 [VER MAPA](https://drodrigo96.github.io/CONTAGIOS%20COVID19.html)
+
+El Jupyter Notebook del repositorio de GitHub hace un render estático, para ver el Notebook con el mapa interactivo: [AQUÍ](https://nbviewer.jupyter.org/github/DRodrigo96/SomeProjects/blob/master/Contagio%20COVID-19/Covid19%20Distrital.ipynb)
