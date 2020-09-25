@@ -5,5 +5,5 @@ Agradecimientos para los usuarios [Vadim Gremyachev](https://stackoverflow.com/u
 
 El Jupyter Notebook del repositorio de GitHub hace un render estático, para ver el Notebook con el mapa interactivo: [AQUÍ](https://nbviewer.jupyter.org/github/DRodrigo96/SomeProjects/blob/master/Contagio%20COVID-19/Covid19%20Mapa%20Distrital.ipynb)
 
-**Nota importante**
+**Nota importante**  
 El material del repositorio se encuentra sujeto a los términos de servicio de GitHub sobre Ownership of Content, Right to Post, and License Grants. Este repositorio usa código original y referencias de código de otros autores a quienes se les brinda crédito por su valiosa contribución.
