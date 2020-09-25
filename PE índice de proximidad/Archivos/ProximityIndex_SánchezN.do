@@ -28,30 +28,30 @@ global d "4_Tablas"
 	
 	gen year = 2018
 
-	gen  	Sector4 = 1  if p506r4 >= 111 & p506r4 <= 322 
-	replace Sector4 = 2  if p506r4 >= 510 & p506r4 <= 990 
-	replace Sector4 = 3  if p506r4 >= 1010 & p506r4 <= 3320 
-	replace Sector4 = 4  if p506r4 >= 3510 & p506r4 <= 3530 
-	replace Sector4 = 5  if p506r4 >= 3600 & p506r4 <= 3900 
-	replace Sector4 = 6  if p506r4 >= 4100 & p506r4 <= 4390 
-	replace Sector4 = 7  if p506r4 >= 4510 & p506r4 <= 4799 
-	replace Sector4 = 8  if p506r4 >= 4911 & p506r4 <= 5320 
-	replace Sector4 = 9  if p506r4 >= 5510 & p506r4 <= 5630 
-	replace Sector4 = 10 if p506r4 >= 5811 & p506r4 <= 6399
-	replace Sector4 = 11 if p506r4 >= 6411 & p506r4 <= 6630
-	replace Sector4 = 12 if p506r4 >= 6810 & p506r4 <= 6820
-	replace Sector4 = 13 if p506r4 >= 6910 & p506r4 <= 7500
-	replace Sector4 = 14 if p506r4 >= 7710 & p506r4 <= 8299
-	replace Sector4 = 15 if p506r4 >= 8411 & p506r4 <= 8430
-	replace Sector4 = 16 if p506r4 >= 8510 & p506r4 <= 8550
-	replace Sector4 = 17 if p506r4 >= 8610 & p506r4 <= 8890
-	replace Sector4 = 18 if p506r4 >= 9000 & p506r4 <= 9329
-	replace Sector4 = 19 if p506r4 >= 9411 & p506r4 <= 9609
-	replace Sector4 = 20 if p506r4 >= 9700 & p506r4 <= 9820
-	replace Sector4 = 21 if p506r4 >= 9900 & p506r4 <= 9999
+	gen  	sectorE = 1  if p506r4 >= 111 & p506r4 <= 322 
+	replace sectorE = 2  if p506r4 >= 510 & p506r4 <= 990 
+	replace sectorE = 3  if p506r4 >= 1010 & p506r4 <= 3320 
+	replace sectorE = 4  if p506r4 >= 3510 & p506r4 <= 3530 
+	replace sectorE = 5  if p506r4 >= 3600 & p506r4 <= 3900 
+	replace sectorE = 6  if p506r4 >= 4100 & p506r4 <= 4390 
+	replace sectorE = 7  if p506r4 >= 4510 & p506r4 <= 4799 
+	replace sectorE = 8  if p506r4 >= 4911 & p506r4 <= 5320 
+	replace sectorE = 9  if p506r4 >= 5510 & p506r4 <= 5630 
+	replace sectorE = 10 if p506r4 >= 5811 & p506r4 <= 6399
+	replace sectorE = 11 if p506r4 >= 6411 & p506r4 <= 6630
+	replace sectorE = 12 if p506r4 >= 6810 & p506r4 <= 6820
+	replace sectorE = 13 if p506r4 >= 6910 & p506r4 <= 7500
+	replace sectorE = 14 if p506r4 >= 7710 & p506r4 <= 8299
+	replace sectorE = 15 if p506r4 >= 8411 & p506r4 <= 8430
+	replace sectorE = 16 if p506r4 >= 8510 & p506r4 <= 8550
+	replace sectorE = 17 if p506r4 >= 8610 & p506r4 <= 8890
+	replace sectorE = 18 if p506r4 >= 9000 & p506r4 <= 9329
+	replace sectorE = 19 if p506r4 >= 9411 & p506r4 <= 9609
+	replace sectorE = 20 if p506r4 >= 9700 & p506r4 <= 9820
+	replace sectorE = 21 if p506r4 >= 9900 & p506r4 <= 9999
 	
 	#delimit;
-	label define Sector4_eti
+	label define sectorE_eti
 	1  "Agricultura, ganadería, silvicultura y pesca" 
 	2  "Explotacion de minas y canteras" 
 	3  "Industrias manufactureras" 
@@ -74,10 +74,10 @@ global d "4_Tablas"
 	20 "Actividades de los hogares como empleadores" 
 	21 "Actividades de organizaciones y órganos extraterritoriales";
 	#delimit cr
-	label values Sector4 Sector4_eti
+	label values sectorE sectorE_eti
 
-	replace Sector4 = 4 if Sector4 == 5
-	replace Sector4 = 18 if Sector4 == 19 | Sector4 == 20
+	replace sectorE = 4 if sectorE == 5
+	replace sectorE = 18 if sectorE == 19 | sectorE == 20
 	
 	gen area=(estrato>=1 & estrato<=5)==1
 	recode area (0=2) 
@@ -96,23 +96,23 @@ global d "4_Tablas"
 	
 	tab year [iw = fac500a] if ocu500 == 1
 	tab ocu500 [iw = fac500a]
-	tab Sector4 [iw = fac500a] if ocu500 == 1
+	tab sectorE [iw = fac500a] if ocu500 == 1
 
 	
 	* Peru
-	table Sector4 [iw = fac500a] if ocu500 == 1, c(mean ONET mean ingreso count year)
+	table sectorE [iw = fac500a] if ocu500 == 1, c(mean ONET mean ingreso count year)
 	mean ONET ingreso [iw = fac500a] if ocu500 == 1
 	tab year [iw = fac500a] if ocu500 == 1
 	
 	preserve 
 	gen contador = 1
 	keep if ocu500 == 1
-	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(Sector4)
+	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(sectorE)
 	export excel using "$d\\180420_proximity.xls", sheet("stata1") sheetreplace firstrow(var) 
 	restore 
 	
 	* Urbano
-	table Sector4 [iw = fac500a] if (ocu500 == 1 & area == 1), c(mean ONET mean ingreso count year)
+	table sectorE [iw = fac500a] if (ocu500 == 1 & area == 1), c(mean ONET mean ingreso count year)
 	mean ONET ingreso [iw = fac500a] if (ocu500 == 1 & area == 1)
 	tab year [iw = fac500a] if (ocu500 == 1 & area == 1)
 	
@@ -120,7 +120,7 @@ global d "4_Tablas"
 	keep if area == 1 
 	gen contador = 1
 	keep if ocu500 == 1
-	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(Sector4)
+	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(sectorE)
 	export excel using "$d\\180420_proximity.xls", sheet("stata2") sheetreplace firstrow(var) 
 	restore 
 	
@@ -144,14 +144,14 @@ global d "4_Tablas"
 
 
 	* Primer y segundo quintil (urbano)
-	table Sector4 [iw = fac500a] if (ocu500 == 1 & quintile <= 2 & area == 1), c(mean ONET mean ingreso mean mieperho count year)
+	table sectorE [iw = fac500a] if (ocu500 == 1 & quintile <= 2 & area == 1), c(mean ONET mean ingreso mean mieperho count year)
 	mean ONET ingreso [iw = fac500a] if (ocu500 == 1 & quintile <= 2 & area == 1)
 	tab year [iw = fac500a] if (ocu500 == 1 & quintile <= 2 & area == 1)
 
-	gen xxx = (Sector4 == 3 | Sector4 == 6 | Sector4 == 7 | Sector4 == 8 | Sector4 == 9 | Sector4 == 16 | Sector4 == 18) if (ocu500 == 1 & quintile <= 2 & area == 1)
+	gen xxx = (sectorE == 3 | sectorE == 6 | sectorE == 7 | sectorE == 8 | sectorE == 9 | sectorE == 16 | sectorE == 18) if (ocu500 == 1 & quintile <= 2 & area == 1)
 	tab ocupinf [iw = fac500a] if xxx == 1
 	
-	tab Sector4 if (ocu500 == 1 & quintile <= 2 & area == 1), m
+	tab sectorE if (ocu500 == 1 & quintile <= 2 & area == 1), m
 	
 	preserve
 	keep if xxx == 1
@@ -164,31 +164,31 @@ global d "4_Tablas"
 	preserve 
 	gen contador = 1
 	keep if ocu500 == 1 & quintile <= 2 & area == 1 
-	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(Sector4)
+	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(sectorE)
 	export excel using "$d\\180420_proximity.xls", sheet("stata3") sheetreplace firstrow(var) 
 	restore 
 
 	* Tercer quintil
-	table Sector4 [iw = fac500a] if (ocu500 == 1 & quintile == 3), c(mean ONET mean ingreso count year)
+	table sectorE [iw = fac500a] if (ocu500 == 1 & quintile == 3), c(mean ONET mean ingreso count year)
 	mean ONET ingreso [iw = fac500a] if (ocu500 == 1 & quintile == 3)
 	tab year [iw = fac500a] if (ocu500 == 1 & quintile == 3)
 	
 	preserve 
 	gen contador = 1
 	keep if ocu500 == 1 & quintile == 3
-	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(Sector4)
+	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(sectorE)
 	export excel using "$d\\180420_proximity.xls", sheet("stata4") sheetreplace firstrow(var) 
 	restore 
 	
 	* Cuarto y quinto quintil
-	table Sector4 [iw = fac500a] if (ocu500 == 1 & quintile >= 4), c(mean ONET mean ingreso count year)
+	table sectorE [iw = fac500a] if (ocu500 == 1 & quintile >= 4), c(mean ONET mean ingreso count year)
 	mean ONET ingreso [iw = fac500a] if (ocu500 == 1 & quintile >= 4)
 	tab year [iw = fac500a] if (ocu500 == 1 & quintile >= 4)
 	
 	preserve 
 	gen contador = 1
 	keep if ocu500 == 1 & quintile >= 4
-	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(Sector4)
+	collapse (mean) ONET APPENDIX ingreso (count) contador [iw = fac500a], by(sectorE)
 	export excel using "$d\\180420_proximity.xls", sheet("stata5") sheetreplace firstrow(var) 
 	restore 
 	
