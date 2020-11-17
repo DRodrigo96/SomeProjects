@@ -1,1 +1,1 @@
-Un ejercicio de Web scraping sincrónico en la página web Mercado Libre con Python para obtener todos los precios de todos los productos de todas las categorías que ofrece. El uso de este código podría generar un baneo de la dirección IP.
+Un ejercicio de Web scraping sincrónico en la página web Mercado Libre con Python para obtener todos los precios de todos los productos de todas las categorías que ofrece, y guardarlos en un archivo de texto. El uso de este código podría generar un baneo de la dirección IP.
