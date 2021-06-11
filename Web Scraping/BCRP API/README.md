@@ -1,0 +1,13 @@
+Python script para descargar automáticamente series del Banco Central de Reserva del Perú a través de su API.
+
+# Uso
+
+1. Generar una archivo TXT con la lista de series que desea descargar:
+
+
+2. Ejecutar en línea de comando:
+
+
+3. Se autogenera una carpeta con los archivos descargados:
+
+
