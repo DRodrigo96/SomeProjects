@@ -1,1 +1,1 @@
-Dos ejercicios de Web scraping sincrónico y asincrónico en la página web de Mercado Libre con Python para obtener datos.
+Dos ejercicios de web scraping con Python sincrónico y asincrónico en la página web de Mercado Libre para obtener datos.
