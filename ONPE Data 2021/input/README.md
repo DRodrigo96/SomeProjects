@@ -1,1 +1,1 @@
-Documentos de input para ha utilizar en los scripts.
+Documento de input con códigos de ubigeo para ha utilizar en los scripts. 
